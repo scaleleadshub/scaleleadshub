@@ -1656,15 +1656,15 @@ if (qualifyForm) {
       await fetch('https://script.google.com/macros/s/AKfycbzE318yt8xV_UJ9hfIo1HasZxQyEQnqg1geawRBRMddXm9jSUT7OChML5b-pgIDU1QddA/exec', {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify(formData)
       });
       
       // Show success message
-      qualifyForm.innerHTML = '<div style="text-align:center;padding:60px 20px;">' +
+      qualifyForm.innerHTML = '<div style="text-align:center;padding:60px 20px;grid-column:1/-1;display:flex;flex-direction:column;align-items:center;">' +
         '<div style="font-size:3rem;margin-bottom:16px;">&#10003;</div>' +
         '<h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:12px;color:var(--accent);">Application Received!</h3>' +
-        '<p style="color:var(--text-secondary);font-size:1rem;line-height:1.7;max-width:480px;margin:0 auto;">We&rsquo;ll review your application and check market availability in your area. Expect to hear from us within 24 hours at <strong style="color:var(--text-primary);">' + formData.email + '</strong></p>' +
+        '<p style="color:var(--text-secondary);font-size:1rem;line-height:1.7;max-width:480px;">We&rsquo;ll review your application and check market availability in your area. Expect to hear from us within 24 hours at <strong style="color:var(--text-primary);">' + formData.email + '</strong></p>' +
         '</div>';
         
     } catch (error) {
