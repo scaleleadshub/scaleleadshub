@@ -7,6 +7,7 @@
 <meta name="description" content="We use AI automation to deliver 10-20+ qualified sales meetings per month for B2B companies. No cold calling. No hiring SDRs. Just pipeline.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgICA8ZGVmcz4KICAgICAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNjYWxlR3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNERkY4RiIgLz4KICAgICAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwRTY3NiIgLz4KICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYWNjZW50R3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzVGRkY5RCIgLz4KICAgICAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNERkY4RiIgLz4KICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgICA8L2RlZnM+CiAgICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQ4IiBmaWxsPSJ1cmwoI3NjYWxlR3JhZGllbnQpIiBvcGFjaXR5PSIwLjEiIC8+CiAgICAgIDxwYXRoIGQ9Ik0zMCAyNSBMNzAgMjUgTDYwIDQ1IEw0MCA0NSBaIiBmaWxsPSJ1cmwoI3NjYWxlR3JhZGllbnQpIiBvcGFjaXR5PSIwLjYiIC8+CiAgICAgIDxwYXRoIGQ9Ik00MCA0NSBMNjAgNDUgTDU1IDYwIEw0NSA2MCBaIiBmaWxsPSJ1cmwoI3NjYWxlR3JhZGllbnQpIiAvPgogICAgICA8cGF0aCBkPSJNNTAgNzUgTDUwIDQwIE01MCA0MCBMNDAgNTAgTTUwIDQwIEw2MCA1MCIgc3Ryb2tlPSJ1cmwoI2FjY2VudEdyYWRpZW50KSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIC8+CiAgICAgIDxjaXJjbGUgY3g9IjM1IiBjeT0iNjUiIHI9IjMiIGZpbGw9InVybCgjYWNjZW50R3JhZGllbnQpIiAvPgogICAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjcwIiByPSIzIiBmaWxsPSJ1cmwoI2FjY2VudEdyYWRpZW50KSIgLz4KICAgICAgPGNpcmNsZSBjeD0iNjUiIGN5PSI2NSIgcj0iMyIgZmlsbD0idXJsKCNhY2NlbnRHcmFkaWVudCkiIC8+CiAgICAgIDxsaW5lIHgxPSIzNSIgeTE9IjY1IiB4Mj0iNTAiIHkyPSI3MCIgc3Ryb2tlPSJ1cmwoI2FjY2VudEdyYWRpZW50KSIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNSIgLz4KICAgICAgPGxpbmUgeDE9IjUwIiB5MT0iNzAiIHgyPSI2NSIgeTI9IjY1IiBzdHJva2U9InVybCgjYWNjZW50R3JhZGllbnQpIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC41IiAvPgogICAgPC9zdmc+">
 <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 /* ========== CSS VARIABLES ========== */
@@ -115,26 +116,31 @@ img { max-width: 100%; display: block; }
 }
 
 .nav-logo {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.35rem;
-  letter-spacing: -0.02em;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.nav-logo .logo-icon {
-  width: 32px;
-  height: 32px;
-  background: var(--accent);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  color: var(--bg-primary);
-  font-weight: 900;
+.nav-logo-icon {
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.nav-logo-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.nav-logo-text span {
+  color: var(--accent);
+}
+
+.nav.scrolled .nav-logo-icon svg {
+  width: 34px;
+  height: 34px;
 }
 
 .nav-links {
@@ -1040,8 +1046,30 @@ img { max-width: 100%; display: block; }
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <div class="logo-icon">S</div>
-      Scale Leads Hub
+      <div class="nav-logo-icon">
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="navGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3DFF8F"/>
+              <stop offset="100%" stop-color="#00E676"/>
+            </linearGradient>
+            <linearGradient id="navGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#5FFF9D"/>
+              <stop offset="100%" stop-color="#3DFF8F"/>
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="48" fill="url(#navGrad1)" opacity="0.1"/>
+          <path d="M30 25 L70 25 L60 45 L40 45 Z" fill="url(#navGrad1)" opacity="0.6"/>
+          <path d="M40 45 L60 45 L55 60 L45 60 Z" fill="url(#navGrad1)"/>
+          <path d="M50 75 L50 40 M50 40 L40 50 M50 40 L60 50" stroke="url(#navGrad2)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="35" cy="65" r="3" fill="url(#navGrad2)"/>
+          <circle cx="50" cy="70" r="3" fill="url(#navGrad2)"/>
+          <circle cx="65" cy="65" r="3" fill="url(#navGrad2)"/>
+          <line x1="35" y1="65" x2="50" y2="70" stroke="url(#navGrad2)" stroke-width="1.5" opacity="0.5"/>
+          <line x1="50" y1="70" x2="65" y2="65" stroke="url(#navGrad2)" stroke-width="1.5" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text">Scale Leads <span>Hub</span></div>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#how">How It Works</a></li>
