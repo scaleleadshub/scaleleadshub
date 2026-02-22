@@ -1653,11 +1653,13 @@ if (qualifyForm) {
     };
     
     try {
+      // Use URLSearchParams to send as form data (avoids CORS issues)
+      const params = new URLSearchParams();
+      Object.keys(formData).forEach(key => params.append(key, formData[key]));
+      
       await fetch('https://script.google.com/macros/s/AKfycbzE318yt8xV_UJ9hfIo1HasZxQyEQnqg1geawRBRMddXm9jSUT7OChML5b-pgIDU1QddA/exec', {
         method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify(formData)
+        body: params
       });
       
       // Show success message
