@@ -1632,7 +1632,6 @@ if (qualifyForm) {
     e.preventDefault();
     
     const submitBtn = qualifyForm.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = 'Submitting...';
     submitBtn.disabled = true;
     
@@ -1652,28 +1651,40 @@ if (qualifyForm) {
       impact: (document.querySelector('textarea[name="impact"]') || {}).value || ''
     };
     
-    try {
-      // Use URLSearchParams to send as form data (avoids CORS issues)
-      const params = new URLSearchParams();
-      Object.keys(formData).forEach(key => params.append(key, formData[key]));
-      
-      await fetch('https://script.google.com/macros/s/AKfycbzE318yt8xV_UJ9hfIo1HasZxQyEQnqg1geawRBRMddXm9jSUT7OChML5b-pgIDU1QddA/exec', {
-        method: 'POST',
-        body: params
-      });
-      
-      // Show success message
+    // Create a hidden iframe to receive the response
+    var iframe = document.createElement('iframe');
+    iframe.name = 'hidden_iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    
+    // Create a hidden form and submit it through the iframe
+    var hiddenForm = document.createElement('form');
+    hiddenForm.method = 'POST';
+    hiddenForm.action = 'https://script.google.com/macros/s/AKfycbxdEbIjn281KM6b6tmdoXhSIL1TybB_Z4eE7JuQ6247Ln_s-wC9P6jLny-QF32FlmTL/exec';
+    hiddenForm.target = 'hidden_iframe';
+    
+    Object.keys(formData).forEach(function(key) {
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = formData[key];
+      hiddenForm.appendChild(input);
+    });
+    
+    document.body.appendChild(hiddenForm);
+    hiddenForm.submit();
+    
+    // Show success after a short delay (iframe submission won't give us a callback)
+    setTimeout(function() {
       qualifyForm.innerHTML = '<div style="text-align:center;padding:60px 20px;grid-column:1/-1;display:flex;flex-direction:column;align-items:center;">' +
         '<div style="font-size:3rem;margin-bottom:16px;">&#10003;</div>' +
         '<h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:12px;color:var(--accent);">Application Received!</h3>' +
         '<p style="color:var(--text-secondary);font-size:1rem;line-height:1.7;max-width:480px;">We&rsquo;ll review your application and check market availability in your area. Expect to hear from us within 24 hours at <strong style="color:var(--text-primary);">' + formData.email + '</strong></p>' +
         '</div>';
-        
-    } catch (error) {
-      submitBtn.innerHTML = originalText;
-      submitBtn.disabled = false;
-      alert('Something went wrong. Please try again or email us directly at frank@scaleleadshub.com');
-    }
+      // Clean up
+      document.body.removeChild(hiddenForm);
+      document.body.removeChild(iframe);
+    }, 2000);
   });
 }
 </script>
