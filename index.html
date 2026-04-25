@@ -151,7 +151,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 .footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
 .footer-inner{display:flex;justify-content:space-between;align-items:center}
 .footer-text{font-size:0.82rem;color:var(--text-muted)}
-.footer-links{display:flex;gap:24px;list-style:none}.footer-links a{font-size:0.82rem;color:var(--text-muted);transition:color 0.3s}.footer-links a:hover{color:var(--text-primary)}
+.footer-links{display:flex;gap:24px;list-style:none}.footer-links a,.footer-links span{font-size:0.82rem;color:var(--text-muted);transition:color 0.3s}.footer-links a:hover{color:var(--text-primary)}
 @media(max-width:768px){.section{padding:50px 0}.hero{padding-top:100px;min-height:auto;padding-bottom:40px}.hero h1{font-size:2.2rem}.problem-grid{grid-template-columns:1fr;gap:32px}.systems-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:1fr 1fr}.credential-grid{grid-template-columns:1fr}.includes-list{grid-template-columns:1fr}.contact-form{grid-template-columns:1fr}.form-group{grid-column:1}.form-group.full-width{grid-column:1}.footer-inner{flex-direction:column;gap:16px}.nav-links{display:none;position:fixed;top:60px;left:0;right:0;background:var(--bg-primary);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid var(--border)}.nav-links.open{display:flex}.mobile-toggle{display:flex}.pricing-cards-grid{grid-template-columns:1fr}.math-grid{grid-template-columns:1fr}.includes-block{padding:28px 24px}.pricing-card-dual{padding:28px 24px}.pricing-tier{flex-direction:column;align-items:flex-start;gap:8px}.pricing-tier-value{text-align:left}.pricing-tier-value-sub{text-align:left}}
 </style>
 </head>
@@ -174,7 +174,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 <div class="hero-proof">
 <div class="proof-stat"><div class="number">$0</div><div class="label">Monthly Retainer</div></div>
 <div class="proof-divider"></div>
-<div class="proof-stat"><div class="number">3 Free</div><div class="label">Pilot Meetings</div></div>
+<div class="proof-stat"><div class="number">$250</div><div class="label">Per Qualified Meeting</div></div>
 <div class="proof-divider"></div>
 <div class="proof-stat"><div class="number">30min</div><div class="label">Job Board Scan Cycle</div></div>
 </div></div></div></section>
@@ -260,19 +260,19 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 <div class="pricing-card-dual">
 <span class="pricing-card-tag pilot">Pilot Test</span>
 <div class="pricing-card-name">Try It Risk Free</div>
-<p class="pricing-card-tagline">10 meetings to prove the system works. No commitment, no setup fee, no commission.</p>
+<p class="pricing-card-tagline">10 meetings to prove the system works. Setup credited back over your first 3 meetings. No commission, no commitment beyond meeting 10.</p>
 <div class="pricing-card-tiers">
 <div class="pricing-tier">
-<div><div class="pricing-tier-label">First 3 meetings</div><div class="pricing-tier-sub">See real hiring managers on calls before you pay anything</div></div>
-<div><div class="pricing-tier-value">FREE</div></div>
+<div><div class="pricing-tier-label">Infrastructure setup</div><div class="pricing-tier-sub">Domains and warmed inboxes. Credited back $250 per meeting for your first 3 meetings, so by meeting 3 your setup is fully recouped.</div></div>
+<div><div class="pricing-tier-value">$750</div><div class="pricing-tier-value-sub">one-time</div></div>
 </div>
 <div class="pricing-tier">
-<div><div class="pricing-tier-label">Next 7 meetings</div><div class="pricing-tier-sub">Pay per qualified meeting only after you&rsquo;ve seen results</div></div>
-<div><div class="pricing-tier-value">$370</div><div class="pricing-tier-value-sub">each</div></div>
+<div><div class="pricing-tier-label">Per qualified meeting</div><div class="pricing-tier-sub">$250 rate is locked through meeting 10. After that, upgrade to Founding or walk away.</div></div>
+<div><div class="pricing-tier-value">$250</div><div class="pricing-tier-value-sub">each</div></div>
 </div>
 <div class="pricing-tier">
-<div><div class="pricing-tier-label">Maximum spend</div><div class="pricing-tier-sub">Pilot caps at 10 meetings. After that, upgrade or walk away.</div></div>
-<div><div class="pricing-tier-value muted">$2,590</div><div class="pricing-tier-value-sub">total cap</div></div>
+<div><div class="pricing-tier-label">Total cost for 10 meetings</div><div class="pricing-tier-sub">$750 setup recouped through your first 3 meetings, then 7 more at $250 each.</div></div>
+<div><div class="pricing-tier-value muted">$2,500</div><div class="pricing-tier-value-sub">net total</div></div>
 </div>
 </div>
 <div class="pricing-card-cta">
@@ -296,7 +296,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 </div>
 <div class="pricing-tier">
 <div><div class="pricing-tier-label">Placement bonus</div><div class="pricing-tier-sub">On any placement that closes within 90 days of a meeting we booked</div></div>
-<div><div class="pricing-tier-value">10%</div><div class="pricing-tier-value-sub">of fee</div></div>
+<div><div class="pricing-tier-value">3%</div><div class="pricing-tier-value-sub">of fee</div></div>
 </div>
 </div>
 <div class="pricing-card-cta">
@@ -324,39 +324,6 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 </ul>
 </div>
 
-<div class="fade-in" style="max-width:1080px;margin:48px auto 0">
-<div style="text-align:center;margin-bottom:8px">
-<h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:800">The Math: Why Both Options Print Money for Your Agency</h3>
-<p style="color:var(--text-muted);font-size:0.9rem;margin-top:8px">Skilled trade placements pay $10K to $16K. Below: realistic outcomes if just 1 in 5 meetings closes.</p>
-</div>
-<div class="math-grid">
-
-<div class="math-box">
-<h4>Pilot Test Math</h4>
-<div class="math-row"><span>3 free meetings</span><strong>$0</strong></div>
-<div class="math-row"><span>7 paid meetings &times; $370</span><strong>$2,590</strong></div>
-<div class="math-row"><span>Setup fee</span><strong>$0</strong></div>
-<div class="math-row"><span>Placement commission</span><strong>$0</strong></div>
-<div class="math-row total"><span>Total cost to you</span><span>$2,590</span></div>
-<div class="math-row total"><span>2 placements at $12K</span><span>$24,000</span></div>
-<div class="math-row net"><span>Net to you</span><span>$21,410</span></div>
-<p style="font-size:0.78rem;color:var(--text-muted);margin-top:14px;text-align:center;line-height:1.5">~89% margin. Capped at 10 meetings to prove the system works.</p>
-</div>
-
-<div class="math-box featured">
-<h4>Founding Client Math</h4>
-<div class="math-row"><span>10 meetings &times; $250</span><strong>$2,500</strong></div>
-<div class="math-row"><span>Setup ($500, credited back)</span><strong>$0 net</strong></div>
-<div class="math-row"><span>2 placements &times; 10% of $12K</span><strong>$2,400</strong></div>
-<div class="math-row"><span>Ongoing meetings after pilot</span><strong>uncapped</strong></div>
-<div class="math-row total"><span>Total cost to you</span><span>$4,900</span></div>
-<div class="math-row total"><span>2 placements at $12K</span><span>$24,000</span></div>
-<div class="math-row net"><span>Net to you</span><span>$19,100</span></div>
-<p style="font-size:0.78rem;color:var(--text-muted);margin-top:14px;text-align:center;line-height:1.5">~80% margin. Lower per-meeting cost and ongoing relationship after meeting 10.</p>
-</div>
-
-</div>
-<p style="color:var(--text-secondary);font-size:0.92rem;margin-top:24px;text-align:center;line-height:1.7;max-width:680px;margin-left:auto;margin-right:auto">Most agencies start with the Pilot to validate the system, then upgrade to Founding for ongoing volume and exclusive territory. Either way: no retainer. No monthly fee. We don&rsquo;t get paid unless you do.</p>
 </div></div></section>
 
 <section class="section" id="guarantee" style="padding-top:40px;padding-bottom:40px"><div class="container">
@@ -365,8 +332,9 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 <div class="guarantee-box fade-in">
 <h3>If we don&rsquo;t deliver 5 qualified meetings in your first 60 days, we keep working at zero cost until you do.</h3>
 <p>A qualified meeting means a confirmed call with a named hiring manager at a direct employer (not an agency), who showed up for at least 10 minutes and confirmed an active or upcoming hiring need.</p>
-<p style="margin-top:16px">You don&rsquo;t pay for our setup time. You don&rsquo;t pay for the tools we run. The first 3 meetings on the Pilot are free. The setup fee on the Founding Program is credited back. The placement bonus only kicks in if a placement actually closes.</p>
+<p style="margin-top:16px">You don&rsquo;t pay for our setup time. You don&rsquo;t pay for the tools we run. Setup fees on both options get credited or reimbursed back to you within your first few meetings. The placement bonus only kicks in if a placement actually closes.</p>
 <p style="color:var(--accent);font-weight:700;margin-top:20px;font-size:1rem">There is no scenario where you lose money on this. Either it works, or we work free until it does.</p>
+<div style="margin-top:32px"><a href="#contact" class="btn-primary">Apply for a Spot<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
 </div></div></section>
 
 <section class="cta-section section" id="contact" style="padding-top:40px"><div class="container"><div class="cta-inner fade-in">
@@ -398,7 +366,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 
 <footer class="footer"><div class="container"><div class="footer-inner">
 <div class="footer-text">&copy; 2026 Scale Leads Hub. All rights reserved.</div>
-<ul class="footer-links"><li><a href="#contact">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul>
+<ul class="footer-links"><li><a href="#contact">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><span>Terms of Service</span></li></ul>
 </div></div></footer>
 <script>
 const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)});
