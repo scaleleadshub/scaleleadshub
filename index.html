@@ -755,6 +755,120 @@ img{max-width:100%;display:block}
   .hero-proof{gap:20px}
   .pd{display:none}
 }
+/* =================================================================
+   PERFORMANCE OVERRIDES — mobile & reduced motion
+   The animated SVGs (108+ SMIL animations, glow filters, blurs) are
+   beautiful on desktop but kill mobile GPUs, causing scroll jank,
+   white-flash repaints and the "scroll-up-then-jumps-down" symptom.
+   On mobile and for users who prefer reduced motion, we keep the
+   static structure but strip animations + heavy filters.
+   ================================================================= */
+
+/* Lighter glow filter for mobile (still styled, but cheap) */
+@media (max-width: 900px) {
+  /* Kill all SVG SMIL animations everywhere */
+  .hero-art svg animate,
+  .hero-art svg animateMotion,
+  .hero-art svg animateTransform,
+  .integ-viz svg animate,
+  .integ-viz svg animateMotion,
+  .integ-viz svg animateTransform,
+  .cta-lines svg animate,
+  .cta-lines svg animateMotion,
+  .cta-lines svg animateTransform,
+  .guar-waves svg animate {
+    animation-play-state: paused !important;
+  }
+
+  /* Strip Gaussian blur filters that murder mobile compositors */
+  .hero-art svg [filter],
+  .integ-viz svg [filter],
+  .cta-lines svg [filter] {
+    filter: none !important;
+  }
+
+  /* Drop animated motion-circles on the hero & CTA on mobile.
+     We keep the structure (static lines) but no traveling pulses. */
+  .hero-art svg circle[r] {
+    display: none;
+  }
+  .cta-lines svg circle[r] {
+    display: none;
+  }
+
+  /* Backdrop-filter blur kills mobile scroll. Replace with solid. */
+  nav.top,
+  nav.top.sc {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(6, 21, 56, 0.97) !important;
+  }
+  .cf,
+  .guar,
+  .vert-card .vc-icon,
+  .cred-i {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Disable hero radial blob animations and reduce the size of any
+     position:fixed/absolute decorative blurs */
+  .hero::before,
+  .hero::after,
+  .about-sec .neon-glow,
+  .pricing-sec::before,
+  .cta-panel::after {
+    animation: none !important;
+    filter: none !important;
+  }
+
+  /* Lower vert-card hover transitions on mobile (they jitter on tap) */
+  .vert-card,
+  .vert-card .shape,
+  .tier {
+    transition: none !important;
+  }
+  .vert-card:hover,
+  .vert-card:hover .shape,
+  .tier:hover {
+    transform: none !important;
+  }
+
+  /* Help the browser composite the hero on its own layer so it
+     doesn't repaint the SVG every scroll frame */
+  .hero-art,
+  .integ-viz,
+  .cta-lines {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+/* Respect users who explicitly prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+  }
+  svg animate,
+  svg animateMotion,
+  svg animateTransform {
+    animation-play-state: paused !important;
+  }
+}
+
+/* Lock scroll to natural behavior (the previous css set
+   `html { scroll-behavior: smooth }` — on mobile this fights the
+   browser's native momentum scroll and is one cause of the
+   "scrolls up, jumps back down" issue) */
+@media (max-width: 900px) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 </style>
 </head>
 <body>
@@ -784,7 +898,7 @@ img{max-width:100%;display:block}
       <li><a href="#industries">Industries</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#about">About us</a></li>
-      <li><a href="#contact" class="cta-l">Book a Call <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+      <li><a href="https://calendly.com/frank-scaleleadshub/20min?month=2026-05" target="_blank" rel="noopener" class="cta-l">Book a Call <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
     </ul>
     <button class="mob" id="mobTog" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -947,7 +1061,7 @@ img{max-width:100%;display:block}
       </h1>
       <p class="hero-s">Qualified business development meetings booked directly to your calendar. No manual hunting. No brand risk. Built specifically for modern recruitment and staffing agencies.</p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn">
+        <a href="https://calendly.com/frank-scaleleadshub/20min?month=2026-05" target="_blank" rel="noopener" class="btn">
           Book a Live Demo
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -1591,7 +1705,7 @@ img{max-width:100%;display:block}
     <div class="cta-in">
       <span class="pill">Let&rsquo;s Talk</span>
       <h2>Ready to Fill Your Pipeline?</h2>
-      <p>Book a 15-minute call. We&rsquo;ll walk you through the system live, so you see every step before you make any decision.</p>
+      <p>Book a 20-minute call. We&rsquo;ll walk you through the system live, so you see every step before you make any decision.</p>
 
       <form class="cf" id="qualifyForm">
         <div id="phase1" style="display:contents">
@@ -1616,7 +1730,7 @@ img{max-width:100%;display:block}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
-          <div class="fn">15-minute call &bull; No commitment &bull; See the system live</div>
+          <div class="fn">20-minute call &bull; No commitment &bull; See the system live</div>
         </div>
 
         <div id="phase2" style="display:none">
@@ -1679,14 +1793,27 @@ img{max-width:100%;display:block}
 
 <script>
 const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('sc',window.scrollY>50)});
+let scrollTicking=false;
+window.addEventListener('scroll',()=>{
+  if(scrollTicking) return;
+  scrollTicking=true;
+  requestAnimationFrame(()=>{
+    nav.classList.toggle('sc',window.scrollY>50);
+    scrollTicking=false;
+  });
+},{passive:true});
 
 const mobTog=document.getElementById('mobTog'),navLinks=document.getElementById('navLinks');
 mobTog.addEventListener('click',()=>{navLinks.classList.toggle('open')});
 navLinks.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>navLinks.classList.remove('open'))});
 
-const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('vis')})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+const isMobile=window.matchMedia('(max-width: 900px)').matches;
+if(isMobile){
+  document.querySelectorAll('.fade').forEach(el=>el.classList.add('vis'));
+}else{
+  const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('vis')})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+}
 
 const cBtn=document.getElementById('continueBtn'),p2=document.getElementById('phase2'),qf=document.getElementById('qualifyForm');
 if(cBtn){
