@@ -589,21 +589,14 @@ img{max-width:100%;display:block}
   background:linear-gradient(180deg, rgba(245,158,11,0.10), rgba(245,158,11,0.02));
   border:1px solid rgba(245,158,11,0.3);
 }
-/* Tier 2B = emerald accent (most-popular slot, no ribbon) */
+/* Tier 2B = emerald accent, equal visual weight with other tiers */
 .tier.pop{
   --tc:#10B981;
-  --tc-soft:rgba(16,185,129,0.18);
-  --tc-glow:rgba(16,185,129,0.5);
-  background:linear-gradient(180deg, rgba(16,185,129,0.18), rgba(16,185,129,0.04));
-  border:1px solid #10B981;
-  box-shadow:
-    0 30px 80px rgba(16,185,129,0.3),
-    0 0 0 1px rgba(16,185,129,0.2),
-    inset 0 1px 0 rgba(255,255,255,0.08);
-  transform:scale(1.04);
-  z-index:2;
+  --tc-soft:rgba(16,185,129,0.16);
+  --tc-glow:rgba(16,185,129,0.35);
+  background:linear-gradient(180deg, rgba(16,185,129,0.10), rgba(16,185,129,0.02));
+  border:1px solid rgba(16,185,129,0.3);
 }
-@media(max-width:1180px){.tier.pop{transform:none}}
 .tier-1::before, .tier-2a::before, .tier.pop::before, .tier-3::before{
   content:'';
   position:absolute;
