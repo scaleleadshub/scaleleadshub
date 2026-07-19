@@ -679,6 +679,9 @@ img{max-width:100%;display:block}
 .bdr-table td:nth-child(2){color:var(--t3)}
 .bdr-table td:nth-child(3){color:var(--pink-2);font-weight:600}
 .bdr-table td:nth-child(4){color:var(--pink-2);font-weight:600}
+.bdr-table td:nth-child(5){color:var(--pink-2);font-weight:600}
+.bdr-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.bdr-table th,.bdr-table td{white-space:nowrap}
 @media(max-width:720px){.bdr-table{font-size:.74rem}.bdr-table th,.bdr-table td{padding:10px 8px}}
 
 /* ===== GUARANTEE ===== */
@@ -1178,7 +1181,7 @@ img{max-width:100%;display:block}
           <span style="opacity:0.8;font-weight:500;margin-left:4px">($495 Value — FREE)</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="#pricing" class="btn2">See Pricing</a>
+        <a href="#pricing" class="btn2">See Plans</a>
       </div>
       <p style="font-size:.78rem;color:var(--t3);margin-top:14px;margin-bottom:36px;font-weight:300;max-width:560px;line-height:1.55">Due to live data API configuration limits, we strictly limit these complimentary market maps to 5 firms per week.</p>
       <p class="hero-trust">Built by a current Googler who averaged 156% quota for 10 quarters in a row at Google and ranked #7 globally as a BDR at Indeed.com.</p>
@@ -1607,15 +1610,15 @@ img{max-width:100%;display:block}
         <div class="tier-label">Raw Intent Pipeline</div>
         <h3>Tier 1</h3>
         <p class="tier-tagline">Live job-order intent data pushed straight to your CRM. For teams with their own sales engine.</p>
-        <div class="tier-price">$1,450<span class="tier-price-sub">/mo</span></div>
-        <p class="tier-setup">$750 setup &middot; Live in 7 days &middot; 30-day rolling</p>
+        <div class="tier-price" style="font-size:1.4rem">Data-only entry</div>
+        <p class="tier-setup">Live in 7 days &middot; 30-day rolling</p>
         <ul class="tier-feats">
           <li>30-minute refresh across Indeed, LinkedIn, ZipRecruiter and niche boards</li>
           <li>Dual-layer verification keeping bounce rates below 2%</li>
           <li>Direct-employer filtering, no staffing competitors</li>
           <li>Instant CRM sync to HubSpot, Salesforce, Airtable or Sheets</li>
         </ul>
-        <a href="https://calendly.com/frank-scaleleadshub/20min?month=2026-06" target="_blank" rel="noopener" class="btn">Start the Pipeline</a>
+        <a href="https://calendly.com/frank-scaleleadshub/20min?month=2026-06" target="_blank" rel="noopener" class="btn">Get My Quote</a>
         <p class="tier-note">Cancel anytime, no lock-in</p>
       </div>
 
@@ -1623,8 +1626,8 @@ img{max-width:100%;display:block}
         <div class="tier-label">Outbound Engine</div>
         <h3>Tier 2A</h3>
         <p class="tier-tagline">Scraping plus full outbound execution. We handle everything from job-post to booked reply, with territory exclusivity.</p>
-        <div class="tier-price">$2,950<span class="tier-price-sub">/mo</span></div>
-        <p class="tier-setup">$1,000 setup &middot; Active in 30 days &middot; 90-day min</p>
+        <div class="tier-price" style="font-size:1.4rem">Fraction of a $5K/mo BDR</div>
+        <p class="tier-setup">Active in 30 days &middot; 90-day min</p>
         <ul class="tier-feats">
           <li>Everything in Tier 1</li>
           <li>10 isolated domains and 20 managed inboxes</li>
@@ -1635,7 +1638,7 @@ img{max-width:100%;display:block}
           <li>Completely fully managed by our team</li>
           <li>1 city / vertical territory exclusivity</li>
         </ul>
-        <a href="https://calendly.com/frank-scaleleadshub/20min?month=2026-06" target="_blank" rel="noopener" class="btn">Secure Fixed Engine</a>
+        <a href="https://calendly.com/frank-scaleleadshub/20min?month=2026-06" target="_blank" rel="noopener" class="btn">Get My Quote</a>
         <p class="tier-note">Flat monthly. No per-meeting fees</p>
       </div>
 
@@ -1643,14 +1646,13 @@ img{max-width:100%;display:block}
         <div class="tier-label">Performance Hybrid</div>
         <h3>Tier 2B</h3>
         <p class="tier-tagline">Shared-risk partnership. Lower retainer that covers core infrastructure, with pricing scaling on booked calls.</p>
-        <div class="tier-price">$1,650<span class="tier-price-sub">/mo</span></div>
-        <span class="tier-perf">+ $250 / qualified meeting sat</span>
-        <p class="tier-setup">$1,000 setup &middot; Active in 30 days &middot; 90-day min</p>
+        <div class="tier-price" style="font-size:1.4rem">Lower base, pay on results</div>
+        <p class="tier-setup">Active in 30 days &middot; 90-day min</p>
         <ul class="tier-feats">
           <li>Everything in Tier 2A</li>
-          <li>You only pay the $250 premium for prospects that book and sit the meeting</li>
+          <li>You only pay the per-meeting premium for prospects that book and sit the meeting</li>
         </ul>
-        <a href="https://calendly.com/frank-scaleleadshub/20min?month=2026-06" target="_blank" rel="noopener" class="btn">Apply for Hybrid</a>
+        <a href="https://calendly.com/frank-scaleleadshub/20min?month=2026-06" target="_blank" rel="noopener" class="btn">Get My Quote</a>
         <p class="tier-note">Pay for results that sit</p>
       </div>
 
@@ -1658,7 +1660,7 @@ img{max-width:100%;display:block}
         <div class="tier-label">Enterprise Lockout</div>
         <h3>Tier 3</h3>
         <p class="tier-tagline">Multi-region lockdown for scaling firms. Custom SOP, your brand voice, multi-channel.</p>
-        <div class="tier-price">Custom</div>
+        <div class="tier-price" style="font-size:1.4rem">Custom scope</div>
         <p class="tier-setup">Custom evaluation &middot; 90-day min</p>
         <ul class="tier-feats">
           <li>Everything in Tier 2A &amp; 2B</li>
@@ -1671,27 +1673,29 @@ img{max-width:100%;display:block}
           <li>Priority engineering line for live tuning</li>
           <li>Quarterly strategy review and roadmap session</li>
         </ul>
-        <a href="https://calendly.com/frank-scaleleadshub/20min?month=2026-06" target="_blank" rel="noopener" class="btn">Enterprise Intake</a>
+        <a href="https://calendly.com/frank-scaleleadshub/20min?month=2026-06" target="_blank" rel="noopener" class="btn">Get My Quote</a>
         <p class="tier-note">For agencies ready to dominate</p>
       </div>
     </div>
 
     <div class="bdr-comp fade">
-      <h3>How Our Tiers Compare to Hiring a Human BDR</h3>
+      <h3>One Human BDR vs Our Machine</h3>
+      <div class="bdr-scroll">
       <table class="bdr-table">
         <thead>
-          <tr><th></th><th>1 Human BDR</th><th>Tier 1</th><th>Tier 2A</th></tr>
+          <tr><th></th><th>1 Human BDR</th><th>Tier 1</th><th>Tier 2A</th><th>Tier 3</th></tr>
         </thead>
         <tbody>
-          <tr><td>Annual cost</td><td>$60K/yr</td><td>$17.4K/yr</td><td>$35.4K/yr</td></tr>
-          <tr><td>Outreach touches/mo</td><td>~3,500</td><td>Data only</td><td>~10,000</td></tr>
-          <tr><td>Channels</td><td>Phone + email</td><td>CRM data feed</td><td>Email (managed)</td></tr>
-          <tr><td>Days per month</td><td>21 (weekdays)</td><td>30 days, 24/7</td><td>30 days, 24/7</td></tr>
-          <tr><td>Sick days / vacation</td><td>Yes</td><td>None</td><td>None</td></tr>
-          <tr><td>Ramp time</td><td>90 days</td><td>7 days</td><td>30 days</td></tr>
-          <tr><td>Territory exclusivity</td><td>Not included</td><td>Within your niche</td><td>1 city / vertical</td></tr>
+          <tr><td>Annual cost</td><td>$60K/yr</td><td>Fraction of the cost</td><td>Fraction of the cost</td><td>Fraction of the cost</td></tr>
+          <tr><td>Outreach touches/mo</td><td>~3,500</td><td>Data only</td><td>~10,000</td><td>~20,000+</td></tr>
+          <tr><td>Channels</td><td>Phone + email</td><td>CRM data feed</td><td>Email (managed)</td><td>Email + LinkedIn (managed)</td></tr>
+          <tr><td>Days per month</td><td>21 (weekdays)</td><td>30 days, 24/7</td><td>30 days, 24/7</td><td>30 days, 24/7</td></tr>
+          <tr><td>Sick days / vacation</td><td>Yes</td><td>None</td><td>None</td><td>None</td></tr>
+          <tr><td>Ramp time</td><td>90 days</td><td>7 days</td><td>30 days</td><td>Custom onboarding</td></tr>
+          <tr><td>Territory exclusivity</td><td>Not included</td><td>Within your niche</td><td>1 city / vertical</td><td>Multi-region (3+ cities)</td></tr>
         </tbody>
       </table>
+      </div>
     </div>
   </div>
 </section>
